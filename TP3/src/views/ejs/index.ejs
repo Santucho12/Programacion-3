@@ -1,0 +1,100 @@
+<%- include('../partials/head'); %>
+
+<%- include ('../partials/header-login'); %>
+
+<div class="funciones">
+
+    <div class="register-container">
+        <h3>Ver Turnos</h3>
+        <form action="/turnos" method="GET">
+            <button type="submit" class="register-btn">Ver turnos</button>
+        </form>
+    </div>
+
+    <div class="register-container">
+    <h3>Registrar Turno</h3>
+    <form action="/api/v1/turnos" method="POST">
+    <div id="mensaje-turno" style="margin-bottom:10px;color:#1976d2;font-weight:600;"></div>
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" name="fecha" required pattern="\d{4}-\d{2}-\d{2}">
+        </div>
+
+        <div class="form-group">
+            <label for="hora">Hora</label>
+            <input type="time" name="hora" required pattern="^([01]\d|2[0-3]):[0-5]\d$">
+        </div>
+
+        <div class="form-group">
+            <label for="pacienteId">ID del Paciente</label>
+            <input type="number" name="pacienteId" required min="1">
+        </div>
+        <div class="form-group">
+            <label for="motivo">Motivo</label>
+            <textarea id="motivo" name="motivo" rows="2" style="width:90%;" required maxlength="40"></textarea>
+        </div>
+
+        <button type="submit" class="register-btn">Registrar turno</button>
+    </form>
+</div>
+
+    <div class="register-container">
+        <h3>Dar de baja Turno</h3>
+        <form action="/turnos/eliminar" method="POST">
+            <div class="form-group">
+                <label for="idTurno">ID del turno</label>
+                <input type="number" name="idTurno" required>
+            </div>
+            <button type="submit" class="register-btn">Eliminar </button>
+        </form>
+    </div>
+
+    <div class="register-container">
+        <h3>Ver Pacientes</h3>
+        <form action="http://localhost:3000/pacientes" method="GET">
+            <button type="submit" class="register-btn">Ver pacientes</button>
+        </form>
+    </div>
+
+    <div class="register-container">
+    <h3>Registrar Paciente</h3>
+    <form action="http://localhost:3000/" method="POST">
+        <div class="form-group">
+            <label for="dniPaciente">DNI del paciente</label>
+            <input type="text" name="dniPaciente" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nombrePaciente">Nombre del paciente</label>
+            <input type="text" name="nombrePaciente" required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellidoPaciente">Apellido del paciente</label>
+            <input type="text" name="apellidoPaciente" required>
+        </div>
+
+        <div class="form-group">
+            <label for="emailPaciente">Email del paciente</label>
+            <input type="email" name="emailPaciente" required>
+        </div>
+
+        <button type="submit" class="register-btn">Registrar paciente</button>
+    </form>
+</div>
+
+    <div class="register-container">
+        <h3>Dar de Baja Paciente</h3>
+        <form action="/pacientes/eliminar" method="POST">
+            <div class="form-group">
+                <label for="idPacienteEliminar">ID del paciente</label>
+                <input type="number" name="idPacienteEliminar" id="idPacienteEliminar" required>
+            </div>
+            <button type="submit" class="register-btn">Eliminar</button>
+        </form>
+    </div>
+
+</div>
+
+<%- include('../partials/footer'); %>
+
