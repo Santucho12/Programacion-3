@@ -1,6 +1,6 @@
 
 document.getElementById("submit").onclick = function() {
-    let texto=document.getElementById("input").value;
+     let texto=document.getElementById("input").value;
 
     let nuevoli=document.createElement("li");
     nuevoli.textContent=texto;
