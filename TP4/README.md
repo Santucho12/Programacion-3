@@ -1,6 +1,6 @@
 # GRUPO 14
 
-## 👥  INTEGRANTES
+## 👥 INTEGRANTES
 #### - Cordano, Nicolas
 #### - Grgurich, Abner
 #### - Nicaise, Raphael
